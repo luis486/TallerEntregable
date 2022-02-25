@@ -37,8 +37,6 @@ public class Application {
 
 		Timestamp ts = Timestamp.from(ZonedDateTime.now().toInstant());
 
-		// Instant instant = ts.toInstant();
-
 		String fecha = ts.toString();
 
 		return fecha;
@@ -48,7 +46,6 @@ public class Application {
 	public String RTT(String msg) {
 
 		if (msg.length() == 1024) {
-
 			return msg;
 		} else {
 			return "El Mensaje no cumple con los 1024 bytes requeridos";
@@ -57,9 +54,7 @@ public class Application {
 	}
 
 	public String speed(String msg) {
-
 		if (msg.length() == 8192) {
-
 			return msg;
 		} else {
 			return "El Mensaje no cumple con los 8192 bytes requeridos";
