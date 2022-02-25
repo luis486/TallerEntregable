@@ -41,16 +41,8 @@ public class TCPConnection extends Thread {
 					bwriter.write(app.ipConfig() + "\n");
 					bwriter.flush();
 				} else if (msg.equalsIgnoreCase("rtt")) {
-					if (msg.length() >= 15 && msg.length() < 5000) {
-						bwriter.write(app.RTT(msg));
 
-					}
 				} else if (msg.equalsIgnoreCase("speed")) {
-
-					if (msg.length() >= 15 && msg.length() < 5000) {
-						bwriter.write(app.speed(msg));
-
-					}
 
 				} else if (msg.equalsIgnoreCase("interface")) {
 					bwriter.write("Esta es la interfaz: " + app.getInterfaces() + "\n");
