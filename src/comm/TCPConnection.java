@@ -45,7 +45,7 @@ public class TCPConnection extends Thread {
 				} else if (msg.equalsIgnoreCase("speed")) {
 
 				} else if (msg.equalsIgnoreCase("interface")) {
-					bwriter.write("Esta es la interfaz " + app.getInterfaces() + "\n");
+					bwriter.write("Esta es la interfaz: " + app.getInterfaces() + "\n");
 					bwriter.flush();
 				} else {
 					System.out.println("Eso no existe Pana, digite bien!!!");

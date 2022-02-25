@@ -4,8 +4,6 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-import app.Application;
-
 public class Client {
 	public static void main(String[] args) {
 
@@ -22,18 +20,18 @@ public class Client {
 				Scanner scanner = new Scanner(System.in);
 
 				String line = scanner.nextLine();
-				bwriter.write(line+"\n");
+				bwriter.write(line + "\n");
 				bwriter.flush();
-				String msg="";
+				String msg = "";
 
 				if (line.equalsIgnoreCase("RTT")) {
-					//line = scanner.nextLine() + "\n"; mandar mensaje de 1024
-				bwriter.write(line+"\n");
-				bwriter.flush();
-					msg = breader.readLine(); //Recibir mensaje de 1024
+					// line = scanner.nextLine() + "\n"; mandar mensaje de 1024
+					bwriter.write(line + "\n");
+					bwriter.flush();
+					msg = breader.readLine(); // Recibir mensaje de 1024
 					System.out.println(msg);
 
-				}else if(line.equalsIgnoreCase("speed")){
+				} else if (line.equalsIgnoreCase("speed")) {
 					msg = breader.readLine();
 					System.out.println(msg);
 				} else {

@@ -19,7 +19,6 @@ public class Application {
 
 	public void init() {
 		connection.start();
-
 	}
 
 	public String ipConfig() {
@@ -46,19 +45,25 @@ public class Application {
 
 	}
 
-	public String RTT() {
+	public String RTT(String msg) {
 
-		String nidiea = "";
+		if (msg.length() == 1024) {
 
-		return nidiea;
+			return msg;
+		} else {
+			return "El Mensaje no cumple con los 1024 bytes requeridos";
+		}
 
 	}
 
-	public String speed() {
+	public String speed(String msg) {
 
-		String ntp = "";
+		if (msg.length() == 8192) {
 
-		return ntp;
+			return msg;
+		} else {
+			return "El Mensaje no cumple con los 8192 bytes requeridos";
+		}
 
 	}
 
@@ -74,7 +79,8 @@ public class Application {
 
 				if (netN.isUp()) {
 					if (netN.getHardwareAddress() != null) {
-						MAC = netN.getName() + " " + new BigInteger(1, netN.getHardwareAddress()).toString(16);
+						MAC = netN.getName() + " Con dirección MAC: "
+								+ new BigInteger(1, netN.getHardwareAddress()).toString(16);
 					}
 
 				}
